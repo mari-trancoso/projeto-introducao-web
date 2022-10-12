@@ -1,0 +1,128 @@
+*{
+    margin:0;
+    padding: 0;
+}
+
+header{
+    display: flex;
+    justify-content:left;
+    align-items: center;
+    background-color: #7D5869;
+    height: 20vh;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-left: 30px;
+    font-size: x-large;
+}
+
+.buscador{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    height: 5vh;
+    background-color: rgb(158, 110, 110);
+    padding-left: 30px;
+    
+}
+
+
+.itens-da-lista{
+    background-color: #ecedff;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    gap: 100px;
+    padding: 20px;
+    text-align:center;
+    
+}
+
+#titulo{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+
+}
+
+img{
+    max-width: 100%;
+    height: 28vh;
+    object-fit: fill;
+    border-radius: 12px;
+    justify-self: right;
+}
+
+ul{
+    text-align: justify;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 1rem;
+}
+
+h3{
+    align-self: center;
+    justify-self: center;
+}
+
+#serie-1, #serie-2, #serie-3, #serie-4, #serie-5{
+    padding: 30px;
+    border-radius: 1rem;
+    margin-left: 20px;
+    background-color: white;
+    font-family:Arial, Helvetica, sans-serif ;
+    display: flex;
+    flex-direction: column;
+    width: 70vh;
+    font-size: 1.5rem;
+    
+}
+
+
+footer{
+    background-color:rgb(158, 110, 110);
+    position: sticky;
+    font-family:Arial, Helvetica, sans-serif ;
+    display: flex;
+    justify-content: center;
+}
+
+@media screen and (min-device-width : 320px) and (max-device-width : 480px) {
+    header{
+        text-align: center;
+    }
+
+    .buscador{
+        justify-content: center;
+    }
+
+ 
+    #serie-1, #serie-2, #serie-3, #serie-4, #serie-5{
+        margin: 0;
+        max-width:fit-content;
+        font-size: 1.5rem;
+
+    }
+
+}
+
+@media screen and (min-device-width : 481px) and (max-device-width : 800px) {
+    #serie-1, #serie-2, #serie-3, #serie-4, #serie-5{
+        margin: 0;
+        max-width:fit-content;
+        font-size: 1.5rem;
+
+    }
+
+}
+
+@media screen and (min-device-width : 801px) and (max-device-width : 1200px) {
+    #serie-1, #serie-2, #serie-3, #serie-4, #serie-5{
+        margin: 0;
+        max-width:fit-content;
+        font-size: 1.5rem;
+
+    }
+
+}
+    
+
