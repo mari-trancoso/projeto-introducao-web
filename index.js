@@ -40,7 +40,7 @@ const serie4 = {
 
 const serie5 = {
     nome : "Pico da Neblina",
-    genero : "comedia",
+    genero : "comédia",
     temporadas : 2,
     ondeVer : ["HBO"],
     jaGanhouPremio : "não",
@@ -441,9 +441,9 @@ function buscar (event){
     const input = document.getElementById("input")
     console.log(input.value)
 
-    const busca = (todasAsSeries, input) => {
+    const busca = (todasAsSeries, string) => {
         const resultado = todasAsSeries.filter((objeto) => {
-            return objeto.genero === string || objeto.nome === string || objeto.temporadas === string || objeto.jaGanhouPremio === string
+            return objeto.genero === string || objeto.nome === string || objeto.temporadas == string || objeto.jaGanhouPremio === string
         })
     
         if (resultado.length > 0){
@@ -452,6 +452,8 @@ function buscar (event){
             alert("Nenhum item encontrado.")
         }
     }
+
+    busca(todasAsSeries, input.value)
 
 }
 
