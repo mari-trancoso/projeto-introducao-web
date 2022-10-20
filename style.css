@@ -59,6 +59,12 @@ ul{
     padding: 1rem;
 }
 
+li{
+    text-align:left;
+    padding: 0.5rem;
+
+}
+
 h3{
     align-self: center;
     justify-self: center;
