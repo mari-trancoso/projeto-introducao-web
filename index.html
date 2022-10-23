@@ -17,69 +17,18 @@
 
     <main>
         <section class="buscador">
-            <input id="input" type="text" name="busca" placeholder="digite aqui">
-            <button onclick=buscar(event) type="submit">Buscar</button>
+            <p id="paragrafo-buscador">Filtre a lista de séries por: nome, gênero, número de temporadas ou se já ganhou premiações. </p>
+            <article id="botao-buscador">
+                <input id="input" type="text" name="busca" placeholder="digite aqui">
+                <button id="buscar" onclick=buscar(event) type="submit">Buscar</button>
+            </article>
         </section>
-        <section class="itens-da-lista">
-            <section id="serie-1">
-                <article id="titulo">
-                     <h3>
-                        <a href="https://www.rottentomatoes.com/tv/the_office">THE OFFICE</a>
-                    </h3>
-                    <img src="./imagens-projeto/the-office.png" alt="Imagem do cartaz da série The Office" width="200px">
-                </article>
-                <ul id="lista-serie1">
-                  
-                </ul>
-            </section>
-
-            <section id="serie-2">
-                <article id="titulo">
-                    <h3>
-                        <a href="https://www.rottentomatoes.com/tv/rick_and_morty">RICK AND MORTY</a>
-                    </h3>
-                    <img src="./imagens-projeto/rick-and-morty.png" alt="Imagem do cartaz da série Rick and Morty" width="200px">
-                </article>
-                <ul id="lista-serie2">
-                    
-                </ul>
-            </section>
-
-            <section id="serie-3">
-                <article id="titulo">
-                    <h3>
-                        <a href="https://www.rottentomatoes.com/tv/mr_robot">MR. ROBOT</a>
-                    </h3>
-                    <img src="./imagens-projeto/mr-robot.png" alt="Imagem do cartaz da série Mr. Robot" width="200px">
-                </article>
-                <ul id="lista-serie3">
-                   
-                </ul>
-            </section>
-
-            <section id="serie-4">
-                <article id="titulo">
-                    <h3>
-                        <a href="https://www.rottentomatoes.com/tv/fleabag">FLEABAG</a>
-                    </h3>
-                    <img src="./imagens-projeto/fleabag.png" alt="Imagem do cartaz da série Fleabag" width="200px">
-                </article>
-                <ul id="lista-serie4">
-                    
-                </ul>
-            </section>
-
-            <section id="serie-5">
-                <article id="titulo">
-                    <h3>
-                        <a href="https://www.imdb.com/title/tt10756754/?ref_=nv_sr_srsg_0">PICO DA NEBLINA</a>
-                    </h3>
-                    <img src="./imagens-projeto/pico-da-neblina.png" alt="Imagem do cartaz da série Pico da Neblina" width="200px">
-                </article>
-                <ul id="lista-serie5">
-                   
-                </ul>
-            </section>
+        <section id="volta-lista-completa">
+            <p id="paragrafo-volta-lista-completa">Para voltar a lista completa clique no botão!</p>
+            <button id="botao-lista-completa" onclick=voltaListaCompleta(event)>Lista completa</button>
+        </section>
+        <section class="itens-da-lista" id="itens-da-lista">
+            
         </section>
     </main>
 

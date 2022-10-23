@@ -4,7 +4,9 @@ const serie1 = {
     temporadas : 8,
     ondeVer : ["HBOMax", "Amazon Prime"], 
     jaGanhouPremio : "sim",
-    principaisAtores : ["Steve Carrel", "John Krasinski", "Jenna Fisher"]
+    principaisAtores : ["Steve Carrel", "John Krasinski", "Jenna Fisher"],
+    imagem: "./imagens-projeto/the-office.png",
+    hiperlink: "https://www.rottentomatoes.com/tv/the_office"
 
 }
 
@@ -14,7 +16,9 @@ const serie2 = {
     temporadas : 6,
     ondeVer : ["HBOMax"],
     jaGanhouPremio : "sim",
-    principaisAtores : ["Justin Roiland", "Spencer Grammer", "Chris Parnell"]
+    principaisAtores : ["Justin Roiland", "Spencer Grammer", "Chris Parnell"],
+    imagem: "./imagens-projeto/rick-and-morty.png",
+    hiperlink:"https://www.rottentomatoes.com/tv/rick_and_morty"
 
 }
 
@@ -24,7 +28,9 @@ const serie3 = {
     temporadas : 4,
     ondeVer : ["Amazon Prime"],
     jaGanhouPremio : "sim",
-    principaisAtores : ["Rami Malek", "Carly Chaikin", "Portia Doubleday"]
+    principaisAtores : ["Rami Malek", "Carly Chaikin", "Portia Doubleday"],
+    imagem:"./imagens-projeto/mr-robot.png",
+    hiperlink:"https://www.rottentomatoes.com/tv/mr_robot"
 
 }
 
@@ -34,7 +40,9 @@ const serie4 = {
     temporadas : 2,
     ondeVer : ["Amazon Prime"],
     jaGanhouPremio : "não",
-    principaisAtores : ["Phoebe Waller-Bridge", "Andrew Scott", "Sia Clifford"]
+    principaisAtores : ["Phoebe Waller-Bridge", "Andrew Scott", "Sia Clifford"],
+    imagem: "./imagens-projeto/fleabag.png",
+    hiperlink:"https://www.rottentomatoes.com/tv/fleabag"
 
 }
 
@@ -42,9 +50,11 @@ const serie5 = {
     nome : "Pico da Neblina",
     genero : "comédia",
     temporadas : 2,
-    ondeVer : ["HBO"],
+    ondeVer : ["HBOMax"],
     jaGanhouPremio : "não",
-    principaisAtores : ["Luís Navarro", "Henrique Santana", "Daniel Furlan"]
+    principaisAtores : ["Luís Navarro", "Henrique Santana", "Daniel Furlan"],
+    imagem: "./imagens-projeto/pico-da-neblina.png",
+    hiperlink: "https://www.imdb.com/title/tt10756754/?ref_=nv_sr_srsg_0"
 
 }
 
@@ -202,258 +212,344 @@ busca(todasAsSeries, "drama")
 //Colocando o DOM
 
 ///////////////////////////////////////////////série 1
-function insereItemGenero(){  
-    const listaSerie = document.getElementById("lista-serie1")
-    const itemNovo = document.createElement("li")
-    itemNovo.innerHTML = "Gênero: " + serie1.genero
-    listaSerie.insertAdjacentElement("beforebegin",itemNovo)
+// function insereItemGenero(){  
+//     const listaSerie = document.getElementById("lista-serie1")
+//     const itemNovo = document.createElement("li")
+//     itemNovo.innerHTML = "Gênero: " + todasAsSeries[serie1.genero]
+//     listaSerie.insertAdjacentElement("beforebegin",itemNovo)
+// }
+
+// insereItemGenero()
+
+// function insereItemTemporada(){  
+//     const listaSerie = document.getElementById("lista-serie1")
+//     const itemNovo = document.createElement("li")
+//     itemNovo.innerHTML = "Temporadas: " + serie1.temporadas
+//     listaSerie.insertAdjacentElement("beforebegin",itemNovo)
+// }
+
+// insereItemTemporada()
+
+// function insereItemOndeVer(){  
+//     const listaSerie = document.getElementById("lista-serie1")
+//     const itemNovo = document.createElement("li")
+//     itemNovo.innerHTML = "Streaming: " + serie1.ondeVer.join(", ")
+//     listaSerie.insertAdjacentElement("beforebegin",itemNovo)
+// }
+
+// insereItemOndeVer()
+
+// function insereItemPremio(){  
+//     const listaSerie = document.getElementById("lista-serie1")
+//     const itemNovo = document.createElement("li")
+//     itemNovo.innerHTML = "Ganhou premiações: " + serie1.jaGanhouPremio
+//     listaSerie.insertAdjacentElement("beforebegin",itemNovo)
+// }
+
+// insereItemPremio()
+
+// function insereItemPrincipaisAtores(){  
+//     const listaSerie = document.getElementById("lista-serie1")
+//     const itemNovo = document.createElement("li")
+//     itemNovo.innerHTML = "Principais atores: " + serie1.principaisAtores.join(", ")
+//     listaSerie.insertAdjacentElement("beforebegin",itemNovo)
+// }
+
+// insereItemPrincipaisAtores()
+
+// ///////////////////////////////////////////////série 2
+// function insereItemGenero2(){  
+//     const listaSerie = document.getElementById("lista-serie2")
+//     const itemNovo = document.createElement("li")
+//     itemNovo.innerHTML = "Gênero: " + serie2.genero
+//     listaSerie.insertAdjacentElement("beforebegin",itemNovo)
+// }
+
+// insereItemGenero2()
+
+// function insereItemTemporada2(){  
+//     const listaSerie = document.getElementById("lista-serie2")
+//     const itemNovo = document.createElement("li")
+//     itemNovo.innerHTML = "Temporadas: " + serie2.temporadas
+//     listaSerie.insertAdjacentElement("beforebegin",itemNovo)
+// }
+
+// insereItemTemporada2()
+
+// function insereItemOndeVer2(){  
+//     const listaSerie = document.getElementById("lista-serie2")
+//     const itemNovo = document.createElement("li")
+//     itemNovo.innerHTML = "Streaming: " + serie2.ondeVer.join(", ")
+//     listaSerie.insertAdjacentElement("beforebegin",itemNovo)
+// }
+
+// insereItemOndeVer2()
+
+// function insereItemPremio2(){  
+//     const listaSerie = document.getElementById("lista-serie2")
+//     const itemNovo = document.createElement("li")
+//     itemNovo.innerHTML = "Ganhou premiações: " + serie2.jaGanhouPremio
+//     listaSerie.insertAdjacentElement("beforebegin",itemNovo)
+// }
+
+// insereItemPremio2()
+
+// function insereItemPrincipaisAtores2(){  
+//     const listaSerie = document.getElementById("lista-serie2")
+//     const itemNovo = document.createElement("li")
+//     itemNovo.innerHTML = "Principais atores: " + serie2.principaisAtores.join(", ")
+//     listaSerie.insertAdjacentElement("beforebegin",itemNovo)
+// }
+
+// insereItemPrincipaisAtores2()
+
+// ///////////////////////////////////////////////série 3
+// function insereItemGenero3(){  
+//     const listaSerie = document.getElementById("lista-serie3")
+//     const itemNovo = document.createElement("li")
+//     itemNovo.innerHTML = "Gênero: " + serie3.genero
+//     listaSerie.insertAdjacentElement("beforebegin",itemNovo)
+// }
+
+// insereItemGenero3()
+
+// function insereItemTemporada3(){  
+//     const listaSerie = document.getElementById("lista-serie3")
+//     const itemNovo = document.createElement("li")
+//     itemNovo.innerHTML = "Temporadas: " + serie3.temporadas
+//     listaSerie.insertAdjacentElement("beforebegin",itemNovo)
+// }
+
+// insereItemTemporada3()
+
+// function insereItemOndeVer3(){  
+//     const listaSerie = document.getElementById("lista-serie3")
+//     const itemNovo = document.createElement("li")
+//     itemNovo.innerHTML = "Streaming: " + serie3.ondeVer.join(", ")
+//     listaSerie.insertAdjacentElement("beforebegin",itemNovo)
+// }
+
+// insereItemOndeVer3()
+
+// function insereItemPremio3(){  
+//     const listaSerie = document.getElementById("lista-serie3")
+//     const itemNovo = document.createElement("li")
+//     itemNovo.innerHTML = "Ganhou premiações: " + serie3.jaGanhouPremio
+//     listaSerie.insertAdjacentElement("beforebegin",itemNovo)
+// }
+
+// insereItemPremio3()
+
+// function insereItemPrincipaisAtores3(){  
+//     const listaSerie = document.getElementById("lista-serie3")
+//     const itemNovo = document.createElement("li")
+//     itemNovo.innerHTML = "Principais atores: " + serie3.principaisAtores.join(", ")
+//     listaSerie.insertAdjacentElement("beforebegin",itemNovo)
+// }
+
+// insereItemPrincipaisAtores3()
+
+
+// ///////////////////////////////////////////////série 4
+
+// function insereItemGenero4(){  
+//     const listaSerie = document.getElementById("lista-serie4")
+//     const itemNovo = document.createElement("li")
+//     itemNovo.innerHTML = "Gênero: " + serie4.genero
+//     listaSerie.insertAdjacentElement("beforebegin",itemNovo)
+// }
+
+// insereItemGenero4()
+
+// function insereItemTemporada4(){  
+//     const listaSerie = document.getElementById("lista-serie4")
+//     const itemNovo = document.createElement("li")
+//     itemNovo.innerHTML = "Temporadas: " + serie4.temporadas
+//     listaSerie.insertAdjacentElement("beforebegin",itemNovo)
+// }
+
+// insereItemTemporada4()
+
+// function insereItemOndeVer4(){  
+//     const listaSerie = document.getElementById("lista-serie4")
+//     const itemNovo = document.createElement("li")
+//     itemNovo.innerHTML = "Streaming: " + serie4.ondeVer.join(", ")
+//     listaSerie.insertAdjacentElement("beforebegin",itemNovo)
+// }
+
+// insereItemOndeVer4()
+
+// function insereItemPremio4(){  
+//     const listaSerie = document.getElementById("lista-serie4")
+//     const itemNovo = document.createElement("li")
+//     itemNovo.innerHTML = "Ganhou premiações: " + serie4.jaGanhouPremio
+//     listaSerie.insertAdjacentElement("beforebegin",itemNovo)
+// }
+
+// insereItemPremio4()
+
+// function insereItemPrincipaisAtores4(){  
+//     const listaSerie = document.getElementById("lista-serie4")
+//     const itemNovo = document.createElement("li")
+//     itemNovo.innerHTML = "Principais atores: " + serie4.principaisAtores.join(", ")
+//     listaSerie.insertAdjacentElement("beforebegin",itemNovo)
+// }
+
+// insereItemPrincipaisAtores4()
+
+
+// ///////////////////////////////////////////////série 5
+
+// function insereItemGenero5(){  
+//     const listaSerie = document.getElementById("lista-serie5")
+//     const itemNovo = document.createElement("li")
+//     itemNovo.innerHTML = "Gênero: " + serie5.genero
+//     listaSerie.insertAdjacentElement("beforebegin",itemNovo)
+// }
+
+// insereItemGenero5()
+
+// function insereItemTemporada5(){  
+//     const listaSerie = document.getElementById("lista-serie5")
+//     const itemNovo = document.createElement("li")
+//     itemNovo.innerHTML = "Temporadas: " + serie5.temporadas
+//     listaSerie.insertAdjacentElement("beforebegin",itemNovo)
+// }
+
+// insereItemTemporada5()
+
+// function insereItemOndeVer5(){  
+//     const listaSerie = document.getElementById("lista-serie5")
+//     const itemNovo = document.createElement("li")
+//     itemNovo.innerHTML = "Streaming: " + serie5.ondeVer.join(", ")
+//     listaSerie.insertAdjacentElement("beforebegin",itemNovo)
+// }
+
+// insereItemOndeVer5()
+
+// function insereItemPremio5(){  
+//     const listaSerie = document.getElementById("lista-serie5")
+//     const itemNovo = document.createElement("li")
+//     itemNovo.innerHTML = "Ganhou premiações: " + serie5.jaGanhouPremio
+//     listaSerie.insertAdjacentElement("beforebegin",itemNovo)
+// }
+
+// insereItemPremio5()
+
+// function insereItemPrincipaisAtores5(){  
+//     const listaSerie = document.getElementById("lista-serie5")
+//     const itemNovo = document.createElement("li")
+//     itemNovo.innerHTML = "Principais atores: " + serie5.principaisAtores.join(", ")
+//     listaSerie.insertAdjacentElement("beforebegin",itemNovo)
+// }
+
+// insereItemPrincipaisAtores5()
+
+function criaCard (serie) {
+    let novoArticle = document.createElement("article")
+    novoArticle.setAttribute("class", "card")
+
+    let titulo = document.createElement("h3")
+    titulo.setAttribute("class", "nome-serie")
+    let texto = serie.nome.toUpperCase()
+    const textoTitulo = document.createTextNode(texto)
+    titulo.appendChild(textoTitulo)
+    novoArticle.insertAdjacentElement("beforeend", titulo)
+
+    let imagem = document.createElement("img")
+    imagem.setAttribute("class", "img")
+    imagem.setAttribute("src", serie.imagem)
+    novoArticle.insertAdjacentElement("beforeend", imagem)
+
+    let listaSerie = document.createElement("ul")
+    listaSerie.setAttribute("class", "lista-serie")
+    novoArticle.insertAdjacentElement("beforeend", listaSerie)
+
+    let liGenero = document.createElement("li")
+    liGenero.setAttribute("class", "li")
+    let genero = "Gênero: " + serie.genero
+    const textoGenero = document.createTextNode(genero)
+    liGenero.appendChild(textoGenero)
+    novoArticle.insertAdjacentElement("beforeend", liGenero)
+
+    let liTemporadas = document.createElement("li")
+    liTemporadas.setAttribute("class", "li")
+    let temporadas = "Temporadas: " + serie.temporadas
+    const textoTemporadas = document.createTextNode(temporadas)
+    liTemporadas.appendChild(textoTemporadas)
+    novoArticle.insertAdjacentElement("beforeend", liTemporadas)
+
+    let liStreaming = document.createElement("li")
+    liStreaming.setAttribute("class", "li")
+    let streaming = "Streaming: " + serie.ondeVer.join(", ")
+    const textoStreaming = document.createTextNode(streaming)
+    liStreaming.appendChild(textoStreaming)
+    novoArticle.insertAdjacentElement("beforeend", liStreaming)
+
+    let liPremiacao = document.createElement("li")
+    liPremiacao.setAttribute("class", "li")
+    let premiacao = "Ganhou premiações: " + serie.jaGanhouPremio
+    const textoPremiacao = document.createTextNode(premiacao)
+    liPremiacao.appendChild(textoPremiacao)
+    novoArticle.insertAdjacentElement("beforeend", liPremiacao)
+
+    let liPrincipaisAtores = document.createElement("li")
+    liPrincipaisAtores.setAttribute("class", "li")
+    let principaisAtores = "Principais atores: " + serie.principaisAtores.join(", ")
+    const textoPinrcipaisAtores = document.createTextNode(principaisAtores)
+    liPrincipaisAtores.appendChild(textoPinrcipaisAtores)
+    novoArticle.insertAdjacentElement("beforeend", liPrincipaisAtores)
+
+    return novoArticle
+
 }
 
-insereItemGenero()
+const mostrarCard = (arraySeries, funcaoCriarCard) =>{
+    let card = null;
+    let listaCard = null;
+    for(let i in arraySeries){
+       card = funcaoCriarCard(arraySeries[i]);
+       listaCard = document.getElementById("itens-da-lista")
+       listaCard.insertAdjacentElement("beforeend", card);
+  
+    }
+  }
 
-function insereItemTemporada(){  
-    const listaSerie = document.getElementById("lista-serie1")
-    const itemNovo = document.createElement("li")
-    itemNovo.innerHTML = "Temporadas: " + serie1.temporadas
-    listaSerie.insertAdjacentElement("beforebegin",itemNovo)
-}
-
-insereItemTemporada()
-
-function insereItemOndeVer(){  
-    const listaSerie = document.getElementById("lista-serie1")
-    const itemNovo = document.createElement("li")
-    itemNovo.innerHTML = "Streaming: " + serie1.ondeVer.join(", ")
-    listaSerie.insertAdjacentElement("beforebegin",itemNovo)
-}
-
-insereItemOndeVer()
-
-function insereItemPremio(){  
-    const listaSerie = document.getElementById("lista-serie1")
-    const itemNovo = document.createElement("li")
-    itemNovo.innerHTML = "Ganhou premiações: " + serie1.jaGanhouPremio
-    listaSerie.insertAdjacentElement("beforebegin",itemNovo)
-}
-
-insereItemPremio()
-
-function insereItemPrincipaisAtores(){  
-    const listaSerie = document.getElementById("lista-serie1")
-    const itemNovo = document.createElement("li")
-    itemNovo.innerHTML = "Principais atores: " + serie1.principaisAtores.join(", ")
-    listaSerie.insertAdjacentElement("beforebegin",itemNovo)
-}
-
-insereItemPrincipaisAtores()
-
-///////////////////////////////////////////////série 2
-function insereItemGenero2(){  
-    const listaSerie = document.getElementById("lista-serie2")
-    const itemNovo = document.createElement("li")
-    itemNovo.innerHTML = "Gênero: " + serie2.genero
-    listaSerie.insertAdjacentElement("beforebegin",itemNovo)
-}
-
-insereItemGenero2()
-
-function insereItemTemporada2(){  
-    const listaSerie = document.getElementById("lista-serie2")
-    const itemNovo = document.createElement("li")
-    itemNovo.innerHTML = "Temporadas: " + serie2.temporadas
-    listaSerie.insertAdjacentElement("beforebegin",itemNovo)
-}
-
-insereItemTemporada2()
-
-function insereItemOndeVer2(){  
-    const listaSerie = document.getElementById("lista-serie2")
-    const itemNovo = document.createElement("li")
-    itemNovo.innerHTML = "Streaming: " + serie2.ondeVer.join(", ")
-    listaSerie.insertAdjacentElement("beforebegin",itemNovo)
-}
-
-insereItemOndeVer2()
-
-function insereItemPremio2(){  
-    const listaSerie = document.getElementById("lista-serie2")
-    const itemNovo = document.createElement("li")
-    itemNovo.innerHTML = "Ganhou premiações: " + serie2.jaGanhouPremio
-    listaSerie.insertAdjacentElement("beforebegin",itemNovo)
-}
-
-insereItemPremio2()
-
-function insereItemPrincipaisAtores2(){  
-    const listaSerie = document.getElementById("lista-serie2")
-    const itemNovo = document.createElement("li")
-    itemNovo.innerHTML = "Principais atores: " + serie2.principaisAtores.join(", ")
-    listaSerie.insertAdjacentElement("beforebegin",itemNovo)
-}
-
-insereItemPrincipaisAtores2()
-
-///////////////////////////////////////////////série 3
-function insereItemGenero3(){  
-    const listaSerie = document.getElementById("lista-serie3")
-    const itemNovo = document.createElement("li")
-    itemNovo.innerHTML = "Gênero: " + serie3.genero
-    listaSerie.insertAdjacentElement("beforebegin",itemNovo)
-}
-
-insereItemGenero3()
-
-function insereItemTemporada3(){  
-    const listaSerie = document.getElementById("lista-serie3")
-    const itemNovo = document.createElement("li")
-    itemNovo.innerHTML = "Temporadas: " + serie3.temporadas
-    listaSerie.insertAdjacentElement("beforebegin",itemNovo)
-}
-
-insereItemTemporada3()
-
-function insereItemOndeVer3(){  
-    const listaSerie = document.getElementById("lista-serie3")
-    const itemNovo = document.createElement("li")
-    itemNovo.innerHTML = "Streaming: " + serie3.ondeVer.join(", ")
-    listaSerie.insertAdjacentElement("beforebegin",itemNovo)
-}
-
-insereItemOndeVer3()
-
-function insereItemPremio3(){  
-    const listaSerie = document.getElementById("lista-serie3")
-    const itemNovo = document.createElement("li")
-    itemNovo.innerHTML = "Ganhou premiações: " + serie3.jaGanhouPremio
-    listaSerie.insertAdjacentElement("beforebegin",itemNovo)
-}
-
-insereItemPremio3()
-
-function insereItemPrincipaisAtores3(){  
-    const listaSerie = document.getElementById("lista-serie3")
-    const itemNovo = document.createElement("li")
-    itemNovo.innerHTML = "Principais atores: " + serie3.principaisAtores.join(", ")
-    listaSerie.insertAdjacentElement("beforebegin",itemNovo)
-}
-
-insereItemPrincipaisAtores3()
-
-
-///////////////////////////////////////////////série 4
-
-function insereItemGenero4(){  
-    const listaSerie = document.getElementById("lista-serie4")
-    const itemNovo = document.createElement("li")
-    itemNovo.innerHTML = "Gênero: " + serie4.genero
-    listaSerie.insertAdjacentElement("beforebegin",itemNovo)
-}
-
-insereItemGenero4()
-
-function insereItemTemporada4(){  
-    const listaSerie = document.getElementById("lista-serie4")
-    const itemNovo = document.createElement("li")
-    itemNovo.innerHTML = "Temporadas: " + serie4.temporadas
-    listaSerie.insertAdjacentElement("beforebegin",itemNovo)
-}
-
-insereItemTemporada4()
-
-function insereItemOndeVer4(){  
-    const listaSerie = document.getElementById("lista-serie4")
-    const itemNovo = document.createElement("li")
-    itemNovo.innerHTML = "Streaming: " + serie4.ondeVer.join(", ")
-    listaSerie.insertAdjacentElement("beforebegin",itemNovo)
-}
-
-insereItemOndeVer4()
-
-function insereItemPremio4(){  
-    const listaSerie = document.getElementById("lista-serie4")
-    const itemNovo = document.createElement("li")
-    itemNovo.innerHTML = "Ganhou premiações: " + serie4.jaGanhouPremio
-    listaSerie.insertAdjacentElement("beforebegin",itemNovo)
-}
-
-insereItemPremio4()
-
-function insereItemPrincipaisAtores4(){  
-    const listaSerie = document.getElementById("lista-serie4")
-    const itemNovo = document.createElement("li")
-    itemNovo.innerHTML = "Principais atores: " + serie4.principaisAtores.join(", ")
-    listaSerie.insertAdjacentElement("beforebegin",itemNovo)
-}
-
-insereItemPrincipaisAtores4()
-
-
-///////////////////////////////////////////////série 5
-
-function insereItemGenero5(){  
-    const listaSerie = document.getElementById("lista-serie5")
-    const itemNovo = document.createElement("li")
-    itemNovo.innerHTML = "Gênero: " + serie5.genero
-    listaSerie.insertAdjacentElement("beforebegin",itemNovo)
-}
-
-insereItemGenero5()
-
-function insereItemTemporada5(){  
-    const listaSerie = document.getElementById("lista-serie5")
-    const itemNovo = document.createElement("li")
-    itemNovo.innerHTML = "Temporadas: " + serie5.temporadas
-    listaSerie.insertAdjacentElement("beforebegin",itemNovo)
-}
-
-insereItemTemporada5()
-
-function insereItemOndeVer5(){  
-    const listaSerie = document.getElementById("lista-serie5")
-    const itemNovo = document.createElement("li")
-    itemNovo.innerHTML = "Streaming: " + serie5.ondeVer.join(", ")
-    listaSerie.insertAdjacentElement("beforebegin",itemNovo)
-}
-
-insereItemOndeVer5()
-
-function insereItemPremio5(){  
-    const listaSerie = document.getElementById("lista-serie5")
-    const itemNovo = document.createElement("li")
-    itemNovo.innerHTML = "Ganhou premiações: " + serie5.jaGanhouPremio
-    listaSerie.insertAdjacentElement("beforebegin",itemNovo)
-}
-
-insereItemPremio5()
-
-function insereItemPrincipaisAtores5(){  
-    const listaSerie = document.getElementById("lista-serie5")
-    const itemNovo = document.createElement("li")
-    itemNovo.innerHTML = "Principais atores: " + serie5.principaisAtores.join(", ")
-    listaSerie.insertAdjacentElement("beforebegin",itemNovo)
-}
-
-insereItemPrincipaisAtores5()
+mostrarCard(todasAsSeries, criaCard)
 
 ///////////////////////////////////////////////função buscar
 
 function buscar (event){
+    event.preventDefault()
+    let listaCard = document.getElementById("itens-da-lista")
+    listaCard.innerHTML = "";
     const input = document.getElementById("input")
     console.log(input.value)
 
     const busca = (todasAsSeries, string) => {
         const resultado = todasAsSeries.filter((objeto) => {
-            return objeto.genero === string || objeto.nome === string || objeto.temporadas == string || objeto.jaGanhouPremio === string
+            if(objeto.genero === string || objeto.nome === string || objeto.temporadas == string || objeto.jaGanhouPremio === string) {
+                return (objeto)
+            }
         })
     
         if (resultado.length > 0){
+            mostrarCard(resultado, criaCard)
             console.log(resultado)
+            
         } else {
             alert("Nenhum item encontrado.")
+            listaCard.innerHTML = ""
         }
     }
 
     busca(todasAsSeries, input.value)
+}
 
+function voltaListaCompleta (event) {
+    event.preventDefault()
+    let listaCard = document.getElementById("itens-da-lista")
+    listaCard.innerHTML = "";
+    mostrarCard(todasAsSeries, criaCard)
 }
 
