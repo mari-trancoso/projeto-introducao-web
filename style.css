@@ -190,12 +190,24 @@ footer{
 
     #volta-lista-completa{
         height: 14vh;
+        display: flex;
+        flex-direction: row;
+        justify-content: left;
+        align-items: center;
     }
 
     img{
         width: 42vw;
     }
+
+    footer{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
 }
+
 
 @media screen and (min-device-width : 481px) and (max-device-width : 800px) {
     .card{
@@ -212,12 +224,26 @@ footer{
         width: 24vw;
     }
 
+    #volta-lista-completa{
+        display: flex;
+        flex-direction: row;
+        justify-content: left;
+        align-items: center;
+    }
+
     #input{
         width: 20vw;
     }
 
     #buscar{
         width: 12vw;
+    }
+
+    footer{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
     }
 
 }
@@ -233,6 +259,13 @@ footer{
         width: 16vw;
     }
 
+    #volta-lista-completa{
+        display: flex;
+        flex-direction: row;
+        justify-content: left;
+        align-items: center;
+    }
+
     #input{
         width: 20vw;
     }
@@ -241,8 +274,11 @@ footer{
         width: 12vw;
     }
 
-    img{
-        width: 42vw;
+    footer{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
     }
 
 }
