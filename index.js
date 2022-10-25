@@ -2,7 +2,7 @@ const serie1 = {
     nome : "The Office",
     genero : "comédia",
     temporadas : 8,
-    ondeVer : ["HBOMax", "Amazon Prime"], 
+    streaming : ["HBOMax", "Amazon Prime"], 
     jaGanhouPremio : "sim",
     principaisAtores : ["Steve Carrel", "John Krasinski", "Jenna Fisher"],
     imagem: "./imagens-projeto/the-office.png",
@@ -14,7 +14,7 @@ const serie2 = {
     nome : "Rick and Morty",
     genero : "comédia",
     temporadas : 6,
-    ondeVer : ["HBOMax"],
+    streaming : ["HBOMax"],
     jaGanhouPremio : "sim",
     principaisAtores : ["Justin Roiland", "Spencer Grammer", "Chris Parnell"],
     imagem: "./imagens-projeto/rick-and-morty.png",
@@ -26,7 +26,7 @@ const serie3 = {
     nome : "Mr. Robot",
     genero : "drama",
     temporadas : 4,
-    ondeVer : ["Amazon Prime"],
+    streaming : ["Amazon Prime"],
     jaGanhouPremio : "sim",
     principaisAtores : ["Rami Malek", "Carly Chaikin", "Portia Doubleday"],
     imagem:"./imagens-projeto/mr-robot.png",
@@ -38,7 +38,7 @@ const serie4 = {
     nome : "Fleabag",
     genero : "comédia",
     temporadas : 2,
-    ondeVer : ["Amazon Prime"],
+    streaming : ["Amazon Prime"],
     jaGanhouPremio : "não",
     principaisAtores : ["Phoebe Waller-Bridge", "Andrew Scott", "Sia Clifford"],
     imagem: "./imagens-projeto/fleabag.png",
@@ -50,7 +50,7 @@ const serie5 = {
     nome : "Pico da Neblina",
     genero : "comédia",
     temporadas : 2,
-    ondeVer : ["HBOMax"],
+    streaming : ["HBOMax"],
     jaGanhouPremio : "não",
     principaisAtores : ["Luís Navarro", "Henrique Santana", "Daniel Furlan"],
     imagem: "./imagens-projeto/pico-da-neblina.png",
@@ -80,35 +80,35 @@ console.log("Checagem se todas as séries já ganharam prêmios: " + checagemDeP
 console.log(`${serie1.nome.toUpperCase()}
 Gênero: ${serie1.genero}
 Temporadas: ${serie1.temporadas}
-Onde assistir: ${serie1.ondeVer}
+Onde assistir: ${serie1.streaming}
 Tem premiações: ${serie1.jaGanhouPremio}
 Principais atores: ${serie1.principaisAtores}
 
 ${serie2.nome.toUpperCase()}
 Gênero: ${serie2.genero}
 Temporadas: ${serie2.temporadas}
-Onde assistir: ${serie2.ondeVer}
+Onde assistir: ${serie2.streaming}
 Tem premiações: ${serie2.jaGanhouPremio}
 Principais atores: ${serie2.principaisAtores}
 
 ${serie3.nome.toUpperCase()}
 Gênero: ${serie3.genero}
 Temporadas: ${serie3.temporadas}
-Onde assistir: ${serie3.ondeVer}
+Onde assistir: ${serie3.streaming}
 Tem premiações: ${serie3.jaGanhouPremio}
 Principais atores: ${serie3.principaisAtores}
 
 ${serie4.nome.toUpperCase()}
 Gênero: ${serie4.genero}
 Temporadas: ${serie4.temporadas}
-Onde assistir: ${serie4.ondeVer}
+Onde assistir: ${serie4.streaming}
 Tem premiações: ${serie4.jaGanhouPremio}
 Principais atores: ${serie4.principaisAtores}
 
 ${serie5.nome.toUpperCase()}
 Gênero: ${serie5.genero}
 Temporadas: ${serie5.temporadas}
-Onde assistir: ${serie5.ondeVer}
+Onde assistir: ${serie5.streaming}
 Tem premiações: ${serie5.jaGanhouPremio}
 Principais atores: ${serie5.principaisAtores}`)
 
@@ -171,7 +171,7 @@ stringRelatorio(serie1)
 
 const busca = (todasAsSeries, string) => {
     const resultado = todasAsSeries.filter((objeto) => {
-        return objeto.genero === string || objeto.nome === string || objeto.temporadas === string || objeto.jaGanhouPremio === string
+        return objeto.genero.toUpperCase() === string.toUpperCase() || objeto.nome.toUpperCase() === string.toUpperCase() || objeto.temporadas === string || objeto.jaGanhouPremio.toUpperCase() === string.toUpperCase()
     })
 
     if (resultado.length > 0){
@@ -183,20 +183,19 @@ const busca = (todasAsSeries, string) => {
 
 busca(todasAsSeries, "drama")
 
-
-
-// const busca = (todasAsSeries, string) => {
+// const buscaOndeVer = (todasAsSeries, string) => {
 //     const resultado = todasAsSeries.filter((objeto) => {
-//         return objeto.nome.include(string) || objeto.genero.include(string) || objeto.temporadas.include(string) || objeto.jaGanhouPremio.include(string) || objeto.principaisAtores.include(string) || objeto.ondeVer.include(string)
+//         return objeto.ondeVer.includes(string.toUpperCase())
+//     })
 
-//         if (resultado.length > 0){
-//             console.log(resultado)
-//         } else {
-//             alert("Nenhum item encontrado.")
-//         }
-// })}
+//     if (resultado.length > 0){
+//         console.log(resultado)
+//     } else {
+//         alert("Nenhum item encontrado.")
+//     }
+// }
 
-// busca(todasAsSeries, "drama")
+// buscaOndeVer(todasAsSeries, "Amazon Prime")
 
 
 //-------------------------------------------------------------SEMANA 6
@@ -211,239 +210,6 @@ busca(todasAsSeries, "drama")
 
 //Colocando o DOM
 
-///////////////////////////////////////////////série 1
-// function insereItemGenero(){  
-//     const listaSerie = document.getElementById("lista-serie1")
-//     const itemNovo = document.createElement("li")
-//     itemNovo.innerHTML = "Gênero: " + todasAsSeries[serie1.genero]
-//     listaSerie.insertAdjacentElement("beforebegin",itemNovo)
-// }
-
-// insereItemGenero()
-
-// function insereItemTemporada(){  
-//     const listaSerie = document.getElementById("lista-serie1")
-//     const itemNovo = document.createElement("li")
-//     itemNovo.innerHTML = "Temporadas: " + serie1.temporadas
-//     listaSerie.insertAdjacentElement("beforebegin",itemNovo)
-// }
-
-// insereItemTemporada()
-
-// function insereItemOndeVer(){  
-//     const listaSerie = document.getElementById("lista-serie1")
-//     const itemNovo = document.createElement("li")
-//     itemNovo.innerHTML = "Streaming: " + serie1.ondeVer.join(", ")
-//     listaSerie.insertAdjacentElement("beforebegin",itemNovo)
-// }
-
-// insereItemOndeVer()
-
-// function insereItemPremio(){  
-//     const listaSerie = document.getElementById("lista-serie1")
-//     const itemNovo = document.createElement("li")
-//     itemNovo.innerHTML = "Ganhou premiações: " + serie1.jaGanhouPremio
-//     listaSerie.insertAdjacentElement("beforebegin",itemNovo)
-// }
-
-// insereItemPremio()
-
-// function insereItemPrincipaisAtores(){  
-//     const listaSerie = document.getElementById("lista-serie1")
-//     const itemNovo = document.createElement("li")
-//     itemNovo.innerHTML = "Principais atores: " + serie1.principaisAtores.join(", ")
-//     listaSerie.insertAdjacentElement("beforebegin",itemNovo)
-// }
-
-// insereItemPrincipaisAtores()
-
-// ///////////////////////////////////////////////série 2
-// function insereItemGenero2(){  
-//     const listaSerie = document.getElementById("lista-serie2")
-//     const itemNovo = document.createElement("li")
-//     itemNovo.innerHTML = "Gênero: " + serie2.genero
-//     listaSerie.insertAdjacentElement("beforebegin",itemNovo)
-// }
-
-// insereItemGenero2()
-
-// function insereItemTemporada2(){  
-//     const listaSerie = document.getElementById("lista-serie2")
-//     const itemNovo = document.createElement("li")
-//     itemNovo.innerHTML = "Temporadas: " + serie2.temporadas
-//     listaSerie.insertAdjacentElement("beforebegin",itemNovo)
-// }
-
-// insereItemTemporada2()
-
-// function insereItemOndeVer2(){  
-//     const listaSerie = document.getElementById("lista-serie2")
-//     const itemNovo = document.createElement("li")
-//     itemNovo.innerHTML = "Streaming: " + serie2.ondeVer.join(", ")
-//     listaSerie.insertAdjacentElement("beforebegin",itemNovo)
-// }
-
-// insereItemOndeVer2()
-
-// function insereItemPremio2(){  
-//     const listaSerie = document.getElementById("lista-serie2")
-//     const itemNovo = document.createElement("li")
-//     itemNovo.innerHTML = "Ganhou premiações: " + serie2.jaGanhouPremio
-//     listaSerie.insertAdjacentElement("beforebegin",itemNovo)
-// }
-
-// insereItemPremio2()
-
-// function insereItemPrincipaisAtores2(){  
-//     const listaSerie = document.getElementById("lista-serie2")
-//     const itemNovo = document.createElement("li")
-//     itemNovo.innerHTML = "Principais atores: " + serie2.principaisAtores.join(", ")
-//     listaSerie.insertAdjacentElement("beforebegin",itemNovo)
-// }
-
-// insereItemPrincipaisAtores2()
-
-// ///////////////////////////////////////////////série 3
-// function insereItemGenero3(){  
-//     const listaSerie = document.getElementById("lista-serie3")
-//     const itemNovo = document.createElement("li")
-//     itemNovo.innerHTML = "Gênero: " + serie3.genero
-//     listaSerie.insertAdjacentElement("beforebegin",itemNovo)
-// }
-
-// insereItemGenero3()
-
-// function insereItemTemporada3(){  
-//     const listaSerie = document.getElementById("lista-serie3")
-//     const itemNovo = document.createElement("li")
-//     itemNovo.innerHTML = "Temporadas: " + serie3.temporadas
-//     listaSerie.insertAdjacentElement("beforebegin",itemNovo)
-// }
-
-// insereItemTemporada3()
-
-// function insereItemOndeVer3(){  
-//     const listaSerie = document.getElementById("lista-serie3")
-//     const itemNovo = document.createElement("li")
-//     itemNovo.innerHTML = "Streaming: " + serie3.ondeVer.join(", ")
-//     listaSerie.insertAdjacentElement("beforebegin",itemNovo)
-// }
-
-// insereItemOndeVer3()
-
-// function insereItemPremio3(){  
-//     const listaSerie = document.getElementById("lista-serie3")
-//     const itemNovo = document.createElement("li")
-//     itemNovo.innerHTML = "Ganhou premiações: " + serie3.jaGanhouPremio
-//     listaSerie.insertAdjacentElement("beforebegin",itemNovo)
-// }
-
-// insereItemPremio3()
-
-// function insereItemPrincipaisAtores3(){  
-//     const listaSerie = document.getElementById("lista-serie3")
-//     const itemNovo = document.createElement("li")
-//     itemNovo.innerHTML = "Principais atores: " + serie3.principaisAtores.join(", ")
-//     listaSerie.insertAdjacentElement("beforebegin",itemNovo)
-// }
-
-// insereItemPrincipaisAtores3()
-
-
-// ///////////////////////////////////////////////série 4
-
-// function insereItemGenero4(){  
-//     const listaSerie = document.getElementById("lista-serie4")
-//     const itemNovo = document.createElement("li")
-//     itemNovo.innerHTML = "Gênero: " + serie4.genero
-//     listaSerie.insertAdjacentElement("beforebegin",itemNovo)
-// }
-
-// insereItemGenero4()
-
-// function insereItemTemporada4(){  
-//     const listaSerie = document.getElementById("lista-serie4")
-//     const itemNovo = document.createElement("li")
-//     itemNovo.innerHTML = "Temporadas: " + serie4.temporadas
-//     listaSerie.insertAdjacentElement("beforebegin",itemNovo)
-// }
-
-// insereItemTemporada4()
-
-// function insereItemOndeVer4(){  
-//     const listaSerie = document.getElementById("lista-serie4")
-//     const itemNovo = document.createElement("li")
-//     itemNovo.innerHTML = "Streaming: " + serie4.ondeVer.join(", ")
-//     listaSerie.insertAdjacentElement("beforebegin",itemNovo)
-// }
-
-// insereItemOndeVer4()
-
-// function insereItemPremio4(){  
-//     const listaSerie = document.getElementById("lista-serie4")
-//     const itemNovo = document.createElement("li")
-//     itemNovo.innerHTML = "Ganhou premiações: " + serie4.jaGanhouPremio
-//     listaSerie.insertAdjacentElement("beforebegin",itemNovo)
-// }
-
-// insereItemPremio4()
-
-// function insereItemPrincipaisAtores4(){  
-//     const listaSerie = document.getElementById("lista-serie4")
-//     const itemNovo = document.createElement("li")
-//     itemNovo.innerHTML = "Principais atores: " + serie4.principaisAtores.join(", ")
-//     listaSerie.insertAdjacentElement("beforebegin",itemNovo)
-// }
-
-// insereItemPrincipaisAtores4()
-
-
-// ///////////////////////////////////////////////série 5
-
-// function insereItemGenero5(){  
-//     const listaSerie = document.getElementById("lista-serie5")
-//     const itemNovo = document.createElement("li")
-//     itemNovo.innerHTML = "Gênero: " + serie5.genero
-//     listaSerie.insertAdjacentElement("beforebegin",itemNovo)
-// }
-
-// insereItemGenero5()
-
-// function insereItemTemporada5(){  
-//     const listaSerie = document.getElementById("lista-serie5")
-//     const itemNovo = document.createElement("li")
-//     itemNovo.innerHTML = "Temporadas: " + serie5.temporadas
-//     listaSerie.insertAdjacentElement("beforebegin",itemNovo)
-// }
-
-// insereItemTemporada5()
-
-// function insereItemOndeVer5(){  
-//     const listaSerie = document.getElementById("lista-serie5")
-//     const itemNovo = document.createElement("li")
-//     itemNovo.innerHTML = "Streaming: " + serie5.ondeVer.join(", ")
-//     listaSerie.insertAdjacentElement("beforebegin",itemNovo)
-// }
-
-// insereItemOndeVer5()
-
-// function insereItemPremio5(){  
-//     const listaSerie = document.getElementById("lista-serie5")
-//     const itemNovo = document.createElement("li")
-//     itemNovo.innerHTML = "Ganhou premiações: " + serie5.jaGanhouPremio
-//     listaSerie.insertAdjacentElement("beforebegin",itemNovo)
-// }
-
-// insereItemPremio5()
-
-// function insereItemPrincipaisAtores5(){  
-//     const listaSerie = document.getElementById("lista-serie5")
-//     const itemNovo = document.createElement("li")
-//     itemNovo.innerHTML = "Principais atores: " + serie5.principaisAtores.join(", ")
-//     listaSerie.insertAdjacentElement("beforebegin",itemNovo)
-// }
-
-// insereItemPrincipaisAtores5()
 
 function criaCard (serie) {
     let novoArticle = document.createElement("article")
@@ -481,7 +247,7 @@ function criaCard (serie) {
 
     let liStreaming = document.createElement("li")
     liStreaming.setAttribute("class", "li")
-    let streaming = "Streaming: " + serie.ondeVer.join(", ")
+    let streaming = "Streaming: " + serie.streaming.join(", ")
     const textoStreaming = document.createTextNode(streaming)
     liStreaming.appendChild(textoStreaming)
     novoArticle.insertAdjacentElement("beforeend", liStreaming)
@@ -528,7 +294,7 @@ function buscar (event){
 
     const busca = (todasAsSeries, string) => {
         const resultado = todasAsSeries.filter((objeto) => {
-            if(objeto.genero === string || objeto.nome === string || objeto.temporadas == string || objeto.jaGanhouPremio === string) {
+            if(objeto.genero.toUpperCase() === string.toUpperCase() || objeto.nome.toUpperCase() === string.toUpperCase() || objeto.temporadas == string || objeto.jaGanhouPremio.toUpperCase() === string.toUpperCase() || objeto.streaming.includes(string)) {
                 return (objeto)
             }
         })
