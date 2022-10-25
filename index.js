@@ -2,9 +2,11 @@ const serie1 = {
     nome : "The Office",
     genero : "comédia",
     temporadas : 8,
-    ondeVer : ["HBOMax", "Amazon Prime"], 
+    streaming : ["HBOMax", "Amazon Prime"], 
     jaGanhouPremio : "sim",
-    principaisAtores : ["Steve Carrel", "John Krasinski", "Jenna Fisher"]
+    principaisAtores : ["Steve Carrel", "John Krasinski", "Jenna Fisher"],
+    imagem: "./imagens-projeto/the-office.png",
+    hiperlink: "https://www.rottentomatoes.com/tv/the_office"
 
 }
 
@@ -12,9 +14,11 @@ const serie2 = {
     nome : "Rick and Morty",
     genero : "comédia",
     temporadas : 6,
-    ondeVer : ["HBOMax"],
+    streaming : ["HBOMax"],
     jaGanhouPremio : "sim",
-    principais : ["Justin Roiland", "Spencer Grammer", "Chris Parnell"]
+    principaisAtores : ["Justin Roiland", "Spencer Grammer", "Chris Parnell"],
+    imagem: "./imagens-projeto/rick-and-morty.png",
+    hiperlink:"https://www.rottentomatoes.com/tv/rick_and_morty"
 
 }
 
@@ -22,9 +26,11 @@ const serie3 = {
     nome : "Mr. Robot",
     genero : "drama",
     temporadas : 4,
-    ondeVer : ["Amazon Prime"],
+    streaming : ["Amazon Prime"],
     jaGanhouPremio : "sim",
-    principaisAtores : ["Rami Malek", "Carly Chaikin", "Portia Doubleday"]
+    principaisAtores : ["Rami Malek", "Carly Chaikin", "Portia Doubleday"],
+    imagem:"./imagens-projeto/mr-robot.png",
+    hiperlink:"https://www.rottentomatoes.com/tv/mr_robot"
 
 }
 
@@ -32,19 +38,23 @@ const serie4 = {
     nome : "Fleabag",
     genero : "comédia",
     temporadas : 2,
-    ondeVer : ["Amazon Prime"],
+    streaming : ["Amazon Prime"],
     jaGanhouPremio : "não",
-    principaisAtores : ["Phoebe Waller-Bridge", "Andrew Scott", "Sia Clifford"]
+    principaisAtores : ["Phoebe Waller-Bridge", "Andrew Scott", "Sia Clifford"],
+    imagem: "./imagens-projeto/fleabag.png",
+    hiperlink:"https://www.rottentomatoes.com/tv/fleabag"
 
 }
 
 const serie5 = {
     nome : "Pico da Neblina",
-    genero : "comedia",
+    genero : "comédia",
     temporadas : 2,
-    ondeVer : ["HBO"],
+    streaming : ["HBOMax"],
     jaGanhouPremio : "não",
-    principaisAtores : ["Luís Navarro", "Henrique Santana", "Daniel Furlan"]
+    principaisAtores : ["Luís Navarro", "Henrique Santana", "Daniel Furlan"],
+    imagem: "./imagens-projeto/pico-da-neblina.png",
+    hiperlink: "https://www.imdb.com/title/tt10756754/?ref_=nv_sr_srsg_0"
 
 }
 
@@ -70,35 +80,35 @@ console.log("Checagem se todas as séries já ganharam prêmios: " + checagemDeP
 console.log(`${serie1.nome.toUpperCase()}
 Gênero: ${serie1.genero}
 Temporadas: ${serie1.temporadas}
-Onde assistir: ${serie1.ondeVer}
+Onde assistir: ${serie1.streaming}
 Tem premiações: ${serie1.jaGanhouPremio}
 Principais atores: ${serie1.principaisAtores}
 
 ${serie2.nome.toUpperCase()}
 Gênero: ${serie2.genero}
 Temporadas: ${serie2.temporadas}
-Onde assistir: ${serie2.ondeVer}
+Onde assistir: ${serie2.streaming}
 Tem premiações: ${serie2.jaGanhouPremio}
 Principais atores: ${serie2.principaisAtores}
 
 ${serie3.nome.toUpperCase()}
 Gênero: ${serie3.genero}
 Temporadas: ${serie3.temporadas}
-Onde assistir: ${serie3.ondeVer}
+Onde assistir: ${serie3.streaming}
 Tem premiações: ${serie3.jaGanhouPremio}
 Principais atores: ${serie3.principaisAtores}
 
 ${serie4.nome.toUpperCase()}
 Gênero: ${serie4.genero}
 Temporadas: ${serie4.temporadas}
-Onde assistir: ${serie4.ondeVer}
+Onde assistir: ${serie4.streaming}
 Tem premiações: ${serie4.jaGanhouPremio}
 Principais atores: ${serie4.principaisAtores}
 
 ${serie5.nome.toUpperCase()}
 Gênero: ${serie5.genero}
 Temporadas: ${serie5.temporadas}
-Onde assistir: ${serie5.ondeVer}
+Onde assistir: ${serie5.streaming}
 Tem premiações: ${serie5.jaGanhouPremio}
 Principais atores: ${serie5.principaisAtores}`)
 
@@ -161,7 +171,7 @@ stringRelatorio(serie1)
 
 const busca = (todasAsSeries, string) => {
     const resultado = todasAsSeries.filter((objeto) => {
-        return objeto.genero === string || objeto.nome === string || objeto.temporadas === string || objeto.jaGanhouPremio === string
+        return objeto.genero.toUpperCase() === string.toUpperCase() || objeto.nome.toUpperCase() === string.toUpperCase() || objeto.temporadas === string || objeto.jaGanhouPremio.toUpperCase() === string.toUpperCase()
     })
 
     if (resultado.length > 0){
@@ -173,9 +183,9 @@ const busca = (todasAsSeries, string) => {
 
 busca(todasAsSeries, "drama")
 
-// const buscaPorNome = (todasAsSeries, string) => {
+// const buscaOndeVer = (todasAsSeries, string) => {
 //     const resultado = todasAsSeries.filter((objeto) => {
-//         return objeto.nome === string
+//         return objeto.ondeVer.includes(string.toUpperCase())
 //     })
 
 //     if (resultado.length > 0){
@@ -185,50 +195,10 @@ busca(todasAsSeries, "drama")
 //     }
 // }
 
-// buscaPorNome(todasAsSeries, "Fleabag")
-
-// const buscaPorTemporada = (todasAsSeries, Number) => {
-//     const resultado = todasAsSeries.filter((objeto) => {
-//         return objeto.temporadas === Number
-//     })
-
-//     if (resultado.length > 0){
-//         console.log(resultado)
-//     } else {
-//         alert("Nenhum item encontrado.")
-//     }
-// }
-
-// buscaPorTemporada(todasAsSeries, 4)
-
-// const buscaPorPremiacao = (todasAsSeries, string) => {
-//     if (string === "sim"){
-//         let string = true
-//         const resultado = todasAsSeries.filter((objeto) => {
-//             return objeto.jaGanhouPremio === string
-//         })
-    
-//         if (resultado.length > 0){
-//             console.log(resultado)
-//     } else if(string === "não") {
-//         let string = false
-//         const resultado = todasAsSeries.filter((objeto) => {
-//             return objeto.jaGanhouPremio === string
-//         })
-    
-//         if (resultado.length > 0){
-//             console.log(resultado)
-//     }
-
-    
-// }}}
-
-// buscaPorPremiacao(todasAsSeries, "sim")
-
-// const listaSerie1 = document.querySelector("#lista-serie1")
+// buscaOndeVer(todasAsSeries, "Amazon Prime")
 
 
-//-------------------------------------------------------------SEMANA 3
+//-------------------------------------------------------------SEMANA 6
 // 1. Altere seu código para que a tela de lista de itens crie os elementos da lista através de manipulação do DOM.
 
 // Atualmente, seus elementos estão criados no HTML e no CSS de forma estática, sem que exista interação entre HTML e 
@@ -236,4 +206,116 @@ busca(todasAsSeries, "drama")
 // do nosso código JS. Para isso, devemos manipular os objetos do HTML e do CSS utilizando o DOM.
 
 // 2. Utilize a função de busca criada no item 2 da semana 6 para fazer com que ao digitar um campo no input e apertar 
-// o botão, apenas os itens com nome igual ao da busca sejam renderizados na tela.
+// o botão, apenas os itens com nome igual ao da busca sejam renderizados na.
+
+//Colocando o DOM
+
+
+function criaCard (serie) {
+    let novoArticle = document.createElement("article")
+    novoArticle.setAttribute("class", "card")
+
+    let titulo = document.createElement("h3")
+    titulo.setAttribute("class", "nome-serie")
+    let texto = serie.nome.toUpperCase()
+    const textoTitulo = document.createTextNode(texto)
+    titulo.appendChild(textoTitulo)
+    novoArticle.insertAdjacentElement("beforeend", titulo)
+
+    let imagem = document.createElement("img")
+    imagem.setAttribute("class", "img")
+    imagem.setAttribute("src", serie.imagem)
+    novoArticle.insertAdjacentElement("beforeend", imagem)
+
+    let listaSerie = document.createElement("ul")
+    listaSerie.setAttribute("class", "lista-serie")
+    novoArticle.insertAdjacentElement("beforeend", listaSerie)
+
+    let liGenero = document.createElement("li")
+    liGenero.setAttribute("class", "li")
+    let genero = "Gênero: " + serie.genero
+    const textoGenero = document.createTextNode(genero)
+    liGenero.appendChild(textoGenero)
+    novoArticle.insertAdjacentElement("beforeend", liGenero)
+
+    let liTemporadas = document.createElement("li")
+    liTemporadas.setAttribute("class", "li")
+    let temporadas = "Temporadas: " + serie.temporadas
+    const textoTemporadas = document.createTextNode(temporadas)
+    liTemporadas.appendChild(textoTemporadas)
+    novoArticle.insertAdjacentElement("beforeend", liTemporadas)
+
+    let liStreaming = document.createElement("li")
+    liStreaming.setAttribute("class", "li")
+    let streaming = "Streaming: " + serie.streaming.join(", ")
+    const textoStreaming = document.createTextNode(streaming)
+    liStreaming.appendChild(textoStreaming)
+    novoArticle.insertAdjacentElement("beforeend", liStreaming)
+
+    let liPremiacao = document.createElement("li")
+    liPremiacao.setAttribute("class", "li")
+    let premiacao = "Ganhou premiações: " + serie.jaGanhouPremio
+    const textoPremiacao = document.createTextNode(premiacao)
+    liPremiacao.appendChild(textoPremiacao)
+    novoArticle.insertAdjacentElement("beforeend", liPremiacao)
+
+    let liPrincipaisAtores = document.createElement("li")
+    liPrincipaisAtores.setAttribute("class", "li")
+    let principaisAtores = "Principais atores: " + serie.principaisAtores.join(", ")
+    const textoPinrcipaisAtores = document.createTextNode(principaisAtores)
+    liPrincipaisAtores.appendChild(textoPinrcipaisAtores)
+    novoArticle.insertAdjacentElement("beforeend", liPrincipaisAtores)
+
+    return novoArticle
+
+}
+
+const mostrarCard = (arraySeries, funcaoCriarCard) =>{
+    let card = null;
+    let listaCard = null;
+    for(let i in arraySeries){
+       card = funcaoCriarCard(arraySeries[i]);
+       listaCard = document.getElementById("itens-da-lista")
+       listaCard.insertAdjacentElement("beforeend", card);
+  
+    }
+  }
+
+mostrarCard(todasAsSeries, criaCard)
+
+///////////////////////////////////////////////função buscar
+
+function buscar (event){
+    event.preventDefault()
+    let listaCard = document.getElementById("itens-da-lista")
+    listaCard.innerHTML = "";
+    const input = document.getElementById("input")
+    console.log(input.value)
+
+    const busca = (todasAsSeries, string) => {
+        const resultado = todasAsSeries.filter((objeto) => {
+            if(objeto.genero.toUpperCase() === string.toUpperCase() || objeto.nome.toUpperCase() === string.toUpperCase() || objeto.temporadas == string || objeto.jaGanhouPremio.toUpperCase() === string.toUpperCase() || objeto.streaming.includes(string)) {
+                return (objeto)
+            }
+        })
+    
+        if (resultado.length > 0){
+            mostrarCard(resultado, criaCard)
+            console.log(resultado)
+            
+        } else {
+            alert("Nenhum item encontrado.")
+            listaCard.innerHTML = ""
+        }
+    }
+
+    busca(todasAsSeries, input.value)
+}
+
+function voltaListaCompleta (event) {
+    event.preventDefault()
+    let listaCard = document.getElementById("itens-da-lista")
+    listaCard.innerHTML = "";
+    mostrarCard(todasAsSeries, criaCard)
+}
+
