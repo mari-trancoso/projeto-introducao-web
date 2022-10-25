@@ -215,12 +215,17 @@ function criaCard (serie) {
     let novoArticle = document.createElement("article")
     novoArticle.setAttribute("class", "card")
 
+    let a = document.createElement("a")
+    a.setAttribute("href", serie.hiperlink)
+    // a.innerHTML=`${serie.hiperlink}`
+    novoArticle.insertAdjacentElement("beforeend", a)
+
     let titulo = document.createElement("h3")
     titulo.setAttribute("class", "nome-serie")
     let texto = serie.nome.toUpperCase()
     const textoTitulo = document.createTextNode(texto)
     titulo.appendChild(textoTitulo)
-    novoArticle.insertAdjacentElement("beforeend", titulo)
+    a.insertAdjacentElement("beforeend", titulo)
 
     let imagem = document.createElement("img")
     imagem.setAttribute("class", "img")
@@ -294,7 +299,7 @@ function buscar (event){
 
     const busca = (todasAsSeries, string) => {
         const resultado = todasAsSeries.filter((objeto) => {
-            if(objeto.genero.toUpperCase() === string.toUpperCase() || objeto.nome.toUpperCase() === string.toUpperCase() || objeto.temporadas == string || objeto.jaGanhouPremio.toUpperCase() === string.toUpperCase() || objeto.streaming.includes(string)) {
+            if(objeto.genero.toUpperCase().includes(string.toUpperCase()) || objeto.nome.toUpperCase().includes(string.toUpperCase()) || objeto.temporadas == string || objeto.jaGanhouPremio.toUpperCase().includes(string.toUpperCase()) || objeto.streaming.includes(string)) {
                 return (objeto)
             }
         })
