@@ -12,31 +12,37 @@
 
 <body>
     <header>
-        <h1>Indicações de série </h1>
+        <h1>Indicações de série da Mari </h1>
+        <img class="banner" src="imagens-projeto/cinema3_01.jpg">
     </header>
 
     <main>
-        <section class="buscador">
-            <p id="paragrafo-buscador">Filtre a lista de séries por: nome, gênero, número de temporadas, streaming ou se já ganhou premiações. </p>
-            <article id="botao-buscador">
-                <input id="input" type="text" name="busca" placeholder="digite aqui">
-                <button id="buscar" onclick=buscar(event) type="submit">Buscar</button>
-            </article>
-        </section>
-        <section id="volta-lista-completa">
-            <p id="paragrafo-volta-lista-completa">Para voltar a lista completa clique no botão!</p>
-            <button id="botao-lista-completa" onclick=voltaListaCompleta(event)>Lista completa</button>
-        </section>
+            <section class="buscador">
+                <p id="paragrafo-buscador">Filtre a lista de séries por: </p>
+                <p id="paragrafo-buscador"> Nome || Gênero || Número de Temporadas || Streaming || Já ganhou premiações </p> 
+                <article id="botao-buscador">
+                    <input id="input" type="text" name="busca" placeholder="digite aqui">
+                    <button id="buscar" onclick=buscar(event) type="submit">Buscar</button>
+                </article>
+            </section>
+            <section id="volta-lista-completa">
+                <p id="paragrafo-volta-lista-completa">Para voltar a lista completa clique no botão!</p>
+                <button id="botao-lista-completa" onclick=voltaListaCompleta(event)>Lista completa</button>
+            </section>
+        
         <section class="itens-da-lista" id="itens-da-lista">
-            
         </section>
     </main>
 
     <footer>
         <section id="final-pagina">
-            <p>By Mariana Negrão Trancoso
-                <a href="https://github.com/mari-trancoso">GitHub</a>
-                <a href="https://www.linkedin.com/in/mariana-negrao-trancoso-a17921b9/">LinkedIn</a>
+            <p>Feito por Mariana Negrão Trancoso
+                <a href="https://github.com/mari-trancoso">
+                    <img id="logo-github" src="./imagens-projeto/logo-github.png">
+                </a>
+                <a href="https://www.linkedin.com/in/mariana-negrao-trancoso-a17921b9/">
+                    <img id="logo-github" src="./imagens-projeto/logo-linkedin.png">
+                </a>
             </p> 
             
         </section>

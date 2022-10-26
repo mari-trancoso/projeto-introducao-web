@@ -2,7 +2,7 @@ const serie1 = {
     nome : "The Office",
     genero : "comédia",
     temporadas : 8,
-    streaming : ["HBOMax", "Amazon Prime"], 
+    streaming : "HBOMax e Amazon Prime", 
     jaGanhouPremio : "sim",
     principaisAtores : ["Steve Carrel", "John Krasinski", "Jenna Fisher"],
     imagem: "./imagens-projeto/the-office.png",
@@ -14,7 +14,7 @@ const serie2 = {
     nome : "Rick and Morty",
     genero : "comédia",
     temporadas : 6,
-    streaming : ["HBOMax"],
+    streaming : "HBOMax",
     jaGanhouPremio : "sim",
     principaisAtores : ["Justin Roiland", "Spencer Grammer", "Chris Parnell"],
     imagem: "./imagens-projeto/rick-and-morty.png",
@@ -26,7 +26,7 @@ const serie3 = {
     nome : "Mr. Robot",
     genero : "drama",
     temporadas : 4,
-    streaming : ["Amazon Prime"],
+    streaming : "Amazon Prime",
     jaGanhouPremio : "sim",
     principaisAtores : ["Rami Malek", "Carly Chaikin", "Portia Doubleday"],
     imagem:"./imagens-projeto/mr-robot.png",
@@ -38,7 +38,7 @@ const serie4 = {
     nome : "Fleabag",
     genero : "comédia",
     temporadas : 2,
-    streaming : ["Amazon Prime"],
+    streaming : "Amazon Prime",
     jaGanhouPremio : "não",
     principaisAtores : ["Phoebe Waller-Bridge", "Andrew Scott", "Sia Clifford"],
     imagem: "./imagens-projeto/fleabag.png",
@@ -50,7 +50,7 @@ const serie5 = {
     nome : "Pico da Neblina",
     genero : "comédia",
     temporadas : 2,
-    streaming : ["HBOMax"],
+    streaming : "HBOMax",
     jaGanhouPremio : "não",
     principaisAtores : ["Luís Navarro", "Henrique Santana", "Daniel Furlan"],
     imagem: "./imagens-projeto/pico-da-neblina.png",
@@ -217,7 +217,6 @@ function criaCard (serie) {
 
     let a = document.createElement("a")
     a.setAttribute("href", serie.hiperlink)
-    // a.innerHTML=`${serie.hiperlink}`
     novoArticle.insertAdjacentElement("beforeend", a)
 
     let titulo = document.createElement("h3")
@@ -252,7 +251,7 @@ function criaCard (serie) {
 
     let liStreaming = document.createElement("li")
     liStreaming.setAttribute("class", "li")
-    let streaming = "Streaming: " + serie.streaming.join(", ")
+    let streaming = "Streaming: " + serie.streaming
     const textoStreaming = document.createTextNode(streaming)
     liStreaming.appendChild(textoStreaming)
     novoArticle.insertAdjacentElement("beforeend", liStreaming)
@@ -297,9 +296,13 @@ function buscar (event){
     const input = document.getElementById("input")
     console.log(input.value)
 
+    if(input.value.length===0){
+        alert("Escreva para poder escolher uma série!")
+    }
+
     const busca = (todasAsSeries, string) => {
         const resultado = todasAsSeries.filter((objeto) => {
-            if(objeto.genero.toUpperCase().includes(string.toUpperCase()) || objeto.nome.toUpperCase().includes(string.toUpperCase()) || objeto.temporadas == string || objeto.jaGanhouPremio.toUpperCase().includes(string.toUpperCase()) || objeto.streaming.includes(string)) {
+            if(objeto.genero.toUpperCase().includes(string.toUpperCase()) || objeto.nome.toUpperCase().includes(string.toUpperCase()) || objeto.temporadas == string || objeto.jaGanhouPremio.toUpperCase().includes(string.toUpperCase()) || objeto.streaming.toUpperCase().includes(string.toUpperCase())) {
                 return (objeto)
             }
         })
@@ -308,13 +311,15 @@ function buscar (event){
             mostrarCard(resultado, criaCard)
             console.log(resultado)
             
+            
         } else {
             alert("Nenhum item encontrado.")
             listaCard.innerHTML = ""
         }
     }
-
+    
     busca(todasAsSeries, input.value)
+    input.value = ""
 }
 
 function voltaListaCompleta (event) {
