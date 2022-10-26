@@ -172,6 +172,11 @@ footer{
 
 #logo-github{
     height: 5vh;
+    width: 2.5vw;
+}
+
+#logo-github:hover{
+    height: 5.5vh;
     width: 3vw;
 }
 
@@ -229,9 +234,23 @@ footer{
 
     footer{
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
         text-align: center;
+    }
+
+    #p-footer{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    #logo-github{
+        height: 5vh;
+        width: auto;
     }
 }
 
@@ -277,6 +296,19 @@ footer{
         text-align: center;
     }
 
+    #p-footer{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    #logo-github{
+        height: 5vh;
+        width: auto;
+    }
+
 }
 
 @media screen and (min-device-width : 801px) and (max-device-width : 1200px) {
@@ -314,6 +346,19 @@ footer{
         justify-content: center;
         align-items: center;
         text-align: center;
+    }
+
+    #p-footer{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    #logo-github{
+        height: 5vh;
+        width: auto;
     }
 
 }
