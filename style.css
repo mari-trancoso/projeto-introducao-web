@@ -17,11 +17,12 @@ header{
 }
 
 .banner{
-    width:24vw;
-    /* height: 32vh; */
+    width:20vw;
+    height: 40vh;
     justify-self: right;
     border-radius: 0%;
-    opacity: 0.7;
+    opacity: 0.8;
+    border-radius: 100%;
 }
 
 
@@ -148,6 +149,7 @@ h3{
 .card {
     padding: 30px;
     border-radius: 1rem;
+    box-shadow: 1rem 1rem gray;
     margin-left: 20px;
     width: 30rem;
     height: auto; 
@@ -156,6 +158,11 @@ h3{
     background-color: white;
     font-family:Arial, Helvetica, sans-serif ;
     font-size: 1.5rem;
+
+}
+
+.card:hover{
+    width: 32vw;
 }
 
 
