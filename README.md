@@ -1,6 +1,6 @@
 # projeto-introducao-web
 
-# Minhas indicações de Séries
+## Minhas indicações de Séries
 
 Site criado como primeiro projeto web.
 
@@ -8,4 +8,4 @@ Possui uma indicação de lista de séries onde o usuário pode filtrar através
 
 Ferramentas utilizadas: CSS, HTML, DOM, Javascript.
 
-## Deploy: <https://mari-trancoso.github.io/projeto-introducao-web/>
+### Deploy: <https://mari-trancoso.github.io/projeto-introducao-web/>
